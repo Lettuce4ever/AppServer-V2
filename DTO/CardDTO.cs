@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace App_Server.DTO
+namespace AppServerGal.DTO
 {
     public class CardDTO
     {

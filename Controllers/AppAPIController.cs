@@ -1,4 +1,5 @@
 ﻿using AppServerGal.Models;
+using AppServerGal.DTO;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -19,6 +20,23 @@ namespace AppServerGal.Controllers
             this.webHostEnvironment = env;
         }
 
+
+
+        [HttpPost("login")]
+        public IActionResult Login([FromBody] DTO.UserDTO userLoginDTO)
+        {
+            try
+            {
+                HttpContext.Session.Clear();//התנתקות מכל נסיון התחברות אחר
+
+                //מצא משתמש במסד הנתונים עם שם משתמש שונה
+                Models.User? modelUser = context.GetUser(userLoginDTO.Username);
+            }
+
+
+
+
+        }
 
         [HttpPost("register")]
         public IActionResult Register([FromBody] DTO.UserDTO userDto)

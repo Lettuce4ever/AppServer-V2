@@ -19,7 +19,9 @@
             this.FirstName = useri.FirstName;
             this.LastName = useri.LastName;
             this.UserPassword = useri.UserPassword;
-
+            this.Score = useri.Score;
+            this.GamesPlayed = useri.GamesPlayed;
+            this.TypeId = useri.TypeId;
         }
     }
 }
