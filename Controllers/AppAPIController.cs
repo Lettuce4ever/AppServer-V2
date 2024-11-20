@@ -31,9 +31,24 @@ namespace AppServerGal.Controllers
 
                 //מצא משתמש במסד הנתונים עם שם משתמש שונה
                 Models.User? modelUser = context.GetUser(userLoginDTO.Username);
+
+
+                //בודק אם המשתמש קיים והאם הסיסמה שלו נכונה ואם לא מחזיר את שגיאת 401
+                if(modelUser == null || modelUser.UserPassword != userLoginDTO.UserPassword)
+                {
+                    return Unauthorized();
+                }
+
+                //כניסה מוצלחת, מעדכן את הכניסה בסשן
+                HttpContext.Session.SetString("loggedinUser", modelUser.UserPassword);
+                DTO.UserDTO sessionUser = new DTO.UserDTO(modelUser);
+                return Ok(sessionUser);
+
             }
-
-
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
 
 
         }
