@@ -17,6 +17,7 @@ namespace AppServerGal.Controllers
         public AppAPIController(GameDbContext context, IWebHostEnvironment env)
         {
             this.context = context;
+
             this.webHostEnvironment = env;
         }
 
