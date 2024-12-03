@@ -99,4 +99,4 @@ select * from Games
 --EF Code
 /*
 scaffold-DbContext "Server = (localdb)\MSSQLLocalDB;Initial Catalog=Game_DB;User ID=TaskAdminLogin;Password=newpassword;" Microsoft.EntityFrameworkCore.SqlServer -OutPutDir Models -Context GameDbContext -DataAnnotations -force
-*/
+*/			
