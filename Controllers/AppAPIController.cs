@@ -24,7 +24,7 @@ namespace AppServerGal.Controllers
 
 
         [HttpPost("login")]
-        public IActionResult Login([FromBody] DTO.UserDTO userLoginDTO)
+        public IActionResult Login([FromBody] DTO.UserLoginDTO userLoginDTO)
         {
             try
             {
