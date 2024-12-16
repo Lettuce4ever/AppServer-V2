@@ -19,5 +19,7 @@ namespace AppServerGal.DTO
         public string? Winner { get; set; }
 
         public string? Loser { get; set; }
+
+        public GameDTO() { }
     }
 }

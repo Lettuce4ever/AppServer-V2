@@ -30,7 +30,7 @@ namespace AppServerGal.Controllers
             {
                 HttpContext.Session.Clear();//התנתקות מכל נסיון התחברות אחר
 
-                //מצא משתמש במסד הנתונים עם שם משתמש שונה
+                //מצא משתמש במסד הנתונים עם שם משתמש תואם 
                 Models.User? modelUser = context.GetUser(userLoginDTO.Username);
 
 
@@ -41,7 +41,8 @@ namespace AppServerGal.Controllers
                 }
 
                 //כניסה מוצלחת, מעדכן את הכניסה בסשן
-                HttpContext.Session.SetString("loggedinUser", modelUser.UserPassword);
+                HttpContext.Session.SetString("loggedinUser", modelUser.Username);
+
                 DTO.UserDTO sessionUser = new DTO.UserDTO(modelUser);
                 return Ok(sessionUser);
 

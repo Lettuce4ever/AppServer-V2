@@ -8,5 +8,7 @@ namespace AppServerGal.DTO
         public byte[]? CardImage { get; set; }
         public string? CardDescription { get; set; }
         public string? Rules { get; set; }
+
+        public CardDTO() { }
     }
 }

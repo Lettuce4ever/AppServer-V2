@@ -12,5 +12,6 @@ namespace AppServerGal.DTO
             this.UserPassword = useri.UserPassword;
 
         }
+        public UserLoginDTO() { }
     }
 }

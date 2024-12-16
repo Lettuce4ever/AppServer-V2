@@ -7,5 +7,7 @@ namespace App_Server.DTO
         public int TypeId { get; set; }
 
         public string? TypeName { get; set; }
+
+        public TypeDTO() { }
     }
 }
